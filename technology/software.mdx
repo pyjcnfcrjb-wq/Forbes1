@@ -1,0 +1,70 @@
+---
+title: "Software: Types, Development, and How It Works"
+sidebarTitle: "Software"
+description: "Understand the different types of software, how programs are built, and the basics of programming languages and operating systems."
+---
+
+Software is the invisible engine of modern life. Every app you tap, every website you visit, every automated process humming away in a data center somewhere — all of it is software: sets of instructions written by humans that tell computers precisely what to do. Unlike hardware, which is the physical machinery, software exists purely as code — logical structures that can be copied, modified, and distributed at virtually zero cost. Understanding what software is and how it's made gives you a clearer picture of the digital world you navigate every day.
+
+## Types of Software
+
+Software falls into several broad categories based on its purpose and audience.
+
+| Category | Description | Examples |
+|---|---|---|
+| **System Software** | Manages hardware and provides a platform for other software | Operating systems, device drivers, firmware |
+| **Application Software** | Helps users perform specific tasks | Word processors, web browsers, games, mobile apps |
+| **Middleware** | Connects different software systems or components | Database connectors, message brokers, API gateways |
+| **Development Tools** | Used to build other software | Code editors, compilers, version control systems |
+
+A further distinction cuts across all these categories: **open-source** vs. **proprietary** software. Open-source software (like Linux, Firefox, and Python) makes its source code publicly available, allowing anyone to inspect, modify, and distribute it. Proprietary software (like Microsoft Office or Adobe Photoshop) keeps its source code private and restricts use through licenses. Both models have significant advantages — open-source fosters community-driven innovation and transparency, while proprietary software often offers polished user experiences backed by commercial support.
+
+## How Software Is Built
+
+Building software is rarely a single act — it is an iterative process involving many roles and phases. The **Software Development Lifecycle (SDLC)** is a structured framework that describes these phases:
+
+1. **Planning** — Define the goals, scope, and feasibility of the project. Who is the software for? What problem does it solve? What resources are required?
+2. **Design** — Architects and designers map out the system's structure: how components will interact, what the user interface will look like, and how data will be stored and accessed.
+3. **Coding (Implementation)** — Developers write the actual source code according to the design specifications, using appropriate programming languages and tools.
+4. **Testing** — Quality assurance engineers (and automated test suites) probe the software for bugs, security vulnerabilities, and performance issues. Testing may include unit tests, integration tests, and user acceptance testing.
+5. **Deployment** — The software is released to users, whether through an app store, a web server, a direct download, or an enterprise rollout.
+6. **Maintenance** — After launch, software requires ongoing updates to fix bugs, patch security issues, add features, and adapt to changes in the underlying platforms.
+
+Modern development teams often use **Agile** methodologies, which break work into short cycles called sprints, enabling rapid iteration and continuous feedback rather than one long sequential process.
+
+## Programming Languages
+
+A programming language is a formal vocabulary and set of rules for writing instructions a computer can execute. Languages differ dramatically in their syntax, purpose, and how they are processed.
+
+**Compiled languages** (like C and C++) are translated directly into machine code by a program called a compiler before they run. The resulting executable is fast but must be recompiled for each target platform. **Interpreted languages** (like Python and JavaScript) are read and executed line-by-line at runtime by an interpreter, making them more flexible and easier to debug but generally somewhat slower for raw computation. Many modern languages blur this distinction — Java, for instance, compiles to bytecode that runs on a virtual machine.
+
+<CodeGroup>
+```python Python
+# Hello, World! in Python
+print("Hello, World!")
+```
+
+```javascript JavaScript
+// Hello, World! in JavaScript
+console.log("Hello, World!");
+```
+</CodeGroup>
+
+Python is widely praised for its readable syntax and is heavily used in data science, machine learning, automation, and web development. JavaScript is the only language that runs natively in web browsers, making it indispensable for interactive websites; it also runs on servers via Node.js. C++ is favored for systems programming, game engines, and performance-critical applications where fine-grained hardware control matters.
+
+## Operating Systems
+
+An **operating system (OS)** is the foundational layer of system software that manages a computer's hardware and provides services for all other programs. Without an OS, every application would need to include its own code for talking to the CPU, memory, keyboard, display, and storage — an impossibly complex task. Instead, the OS abstracts this hardware complexity and exposes it through standard interfaces called **system calls** and **APIs**.
+
+Core functions of an OS include:
+- **Process management** — running multiple programs simultaneously and allocating CPU time among them
+- **Memory management** — tracking which portions of RAM are in use and preventing programs from interfering with each other
+- **File system management** — organizing data on storage devices into files and directories
+- **Device drivers** — translating high-level commands into the specific instructions hardware devices understand
+- **Security and access control** — managing user accounts and permissions
+
+The most widely used desktop operating systems today are **Microsoft Windows**, **Apple macOS**, and the family of **Linux** distributions (such as Ubuntu and Fedora). On mobile devices, **Android** (based on the Linux kernel) and **Apple iOS** dominate the landscape. Servers frequently run Linux due to its stability, security, and open-source flexibility.
+
+<Tip>
+  **Want to learn to code?** Start with Python or JavaScript — both have enormous communities, free learning resources (like freeCodeCamp, The Odin Project, and official documentation), and immediate practical applications. Don't aim to master a language before building something; instead, pick a small project you care about and learn what you need as you go. Building real things is the fastest path to genuine understanding.
+</Tip>

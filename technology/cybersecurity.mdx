@@ -1,0 +1,73 @@
+---
+title: "Cybersecurity Essentials: Protecting Your Digital Life"
+sidebarTitle: "Cybersecurity"
+description: "Explore core cybersecurity concepts including common threats, encryption, best practices for staying safe online, and how to protect your data."
+---
+
+Cybersecurity is the practice of protecting computers, networks, data, and the people who use them from digital attacks, unauthorized access, and damage. As more of daily life — banking, healthcare, communication, commerce — moves online, the stakes of getting security wrong grow higher. You don't need to be a security expert to protect yourself, but understanding the landscape of threats and defenses helps you make smarter decisions about how you use technology.
+
+## Common Threats
+
+Digital threats come in many forms, and attackers are constantly evolving their methods. Here are four of the most widespread categories you should know.
+
+<AccordionGroup>
+  <Accordion title="Phishing">
+    **Phishing** is a social engineering attack in which a malicious actor impersonates a trustworthy entity — a bank, a tech company, a government agency, even a colleague — to trick you into revealing sensitive information such as passwords, credit card numbers, or Social Security numbers. Phishing typically arrives via email, but it also appears through text messages (called **smishing**) and phone calls (**vishing**). The messages often create a sense of urgency ("Your account will be suspended!") to pressure you into acting before you think critically. A well-crafted phishing email can be difficult to distinguish from a legitimate one, which is why checking sender addresses carefully and going directly to a company's website rather than clicking email links is critical.
+  </Accordion>
+  <Accordion title="Malware">
+    **Malware** (malicious software) is a broad term for any software designed to harm, disrupt, or gain unauthorized access to a system. It includes **viruses** (self-replicating programs that attach to other files), **trojans** (malicious programs disguised as legitimate software), **spyware** (software that secretly monitors your activity and transmits data to attackers), and **adware** (unwanted advertising software that can degrade performance and expose you to further threats). Malware typically enters your system through infected downloads, malicious email attachments, or compromised websites. Keeping your operating system and software updated and using reputable antivirus software reduces your exposure significantly.
+  </Accordion>
+  <Accordion title="Ransomware">
+    **Ransomware** is a particularly damaging form of malware that encrypts your files or locks you out of your system, then demands payment (usually in cryptocurrency) in exchange for the decryption key. Ransomware attacks have crippled hospitals, city governments, and major corporations, costing billions of dollars globally. There is no guarantee that paying the ransom will result in your data being restored, which is why regular, offline backups are one of the most effective defenses — if your data is backed up separately, an attacker loses their leverage. Ransomware most commonly spreads via phishing emails or unpatched software vulnerabilities.
+  </Accordion>
+  <Accordion title="Social Engineering">
+    **Social engineering** exploits human psychology rather than technical vulnerabilities. Attackers manipulate people into divulging confidential information or taking actions that compromise security — by posing as IT support staff, impersonating an executive in a business email compromise scam, or using publicly available information from social media to make their approach seem credible (a technique called **spear phishing**). Because social engineering targets human behavior, no amount of technical security can fully protect against it. Security awareness training — helping people recognize manipulation tactics — is a critical organizational defense.
+  </Accordion>
+</AccordionGroup>
+
+## How Encryption Works
+
+**Encryption** is the process of transforming readable data (plaintext) into an unreadable format (ciphertext) using a mathematical algorithm and a key. Only someone with the correct key can decrypt the data back into its original form. Encryption is the backbone of online privacy and security.
+
+There are two main types:
+
+- **Symmetric encryption** uses a single shared key for both encryption and decryption. It is fast and efficient, making it ideal for encrypting large amounts of data. The challenge is securely sharing that key — if an attacker intercepts it, they can decrypt everything. AES (Advanced Encryption Standard) is the most widely used symmetric algorithm today.
+
+- **Asymmetric encryption** (also called public-key cryptography) uses a mathematically linked **key pair**: a public key that anyone can use to encrypt data, and a private key that only the owner holds to decrypt it. You can freely share your public key because encrypting with it is useless without the matching private key. HTTPS, secure email, and digital signatures all rely on asymmetric encryption — often using it to securely exchange a symmetric session key, then switching to the faster symmetric method for the bulk of the communication.
+
+When you see a padlock in your browser, it means the connection is encrypted with TLS (Transport Layer Security), which combines both types to protect your data in transit.
+
+## Best Practices
+
+Good security hygiene doesn't require technical expertise — it requires consistent habits.
+
+<CardGroup cols={2}>
+  <Card title="Strong, Unique Passwords" icon="key">
+    Use a different password for every account, and make each one long and complex — at least 12 characters mixing letters, numbers, and symbols. A **password manager** (such as Bitwarden, 1Password, or Dashlane) stores all your passwords securely so you only need to remember one master password. Never reuse passwords across sites; a breach at one service can expose your accounts everywhere else if you do.
+  </Card>
+  <Card title="Two-Factor Authentication (2FA)" icon="shield-check">
+    Two-factor authentication adds a second verification step beyond your password — such as a code from an authenticator app (Google Authenticator, Authy) or a hardware security key. Even if an attacker obtains your password, they cannot access your account without the second factor. Enable 2FA on every account that offers it, prioritizing email, banking, and social media accounts.
+  </Card>
+  <Card title="Keep Software Updated" icon="arrow-up-circle">
+    Software updates frequently include patches for security vulnerabilities that attackers actively exploit. Delaying updates leaves known doors open. Enable automatic updates for your operating system, browser, and apps wherever possible. This is one of the simplest and highest-impact things you can do to reduce your attack surface.
+  </Card>
+  <Card title="Use a VPN on Public Wi-Fi" icon="wifi">
+    Public Wi-Fi networks — in cafes, airports, hotels — are often unencrypted, making it easy for attackers on the same network to intercept your traffic. A **VPN (Virtual Private Network)** encrypts your connection and routes it through a secure server, protecting your data from eavesdropping. Choose a reputable, paid VPN provider with a verified no-logs policy for the most reliable protection.
+  </Card>
+</CardGroup>
+
+## What to Do If You're Compromised
+
+If you suspect your accounts or devices have been compromised, act quickly:
+
+1. **Change your passwords immediately** — start with your email account, since it can be used to reset other passwords.
+2. **Enable 2FA** on all accounts if you haven't already.
+3. **Notify affected services** — banks, email providers, and social platforms have fraud and security teams that can help contain the damage.
+4. **Scan your devices** with reputable antivirus or anti-malware software to detect and remove any malicious programs.
+5. **Check for unauthorized activity** — review recent logins, sent emails, and financial transactions for anything you don't recognize.
+6. **Report identity theft** — if personal information (Social Security number, financial data) was exposed, report it to the relevant authorities. In the United States, visit IdentityTheft.gov for guided recovery steps.
+7. **Restore from backups** — if ransomware or malware has damaged your data, clean your system thoroughly before restoring files from a known-good backup.
+
+<Warning>
+  **Never click links in unsolicited emails or messages.** Even if a message appears to come from a trusted source, verify by navigating directly to the website or contacting the sender through a separate, known channel. Phishing links can look nearly identical to legitimate URLs — always inspect them carefully before clicking.
+</Warning>

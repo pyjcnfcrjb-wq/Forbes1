@@ -1,0 +1,63 @@
+---
+title: "Internet Basics: How the Web Works"
+sidebarTitle: "Internet Basics"
+description: "Learn how the internet works, from IP addresses and DNS to HTTP protocols and the structure of the World Wide Web."
+---
+
+The internet is the largest and most consequential communication network ever built. At its core, it is a global system of interconnected computers and devices that exchange information using standardized rules called protocols. Whether you're streaming a video, sending an email, or loading a webpage, you are relying on a vast infrastructure of cables, routers, servers, and software working in concert — often in milliseconds.
+
+## What Is the Internet?
+
+The internet is not a single thing owned by any one company or government. It is a **network of networks** — millions of private, public, academic, business, and government networks linked together. When you connect your device to the internet, you are joining this global mesh through an Internet Service Provider (ISP), which routes your traffic to and from the wider network.
+
+Information on the internet doesn't travel as one continuous stream. Instead, it is broken into small chunks called **packets**. Each packet contains a piece of your data along with header information — the destination address, the source address, and sequencing data so the receiving device can reassemble everything in the right order. Packets may take different paths across the network and are reassembled at their destination.
+
+**Routers** are the hardware devices that direct this traffic. Every time a packet leaves your device, it passes through multiple routers that read its destination IP address and forward it toward the correct endpoint. This hop-by-hop routing means the internet has no single point of failure — if one path is congested or broken, routers find another.
+
+## Key Protocols
+
+Protocols are the agreed-upon rules that allow different devices and software to communicate reliably. Three of the most fundamental protocols are TCP/IP, HTTP/HTTPS, and DNS.
+
+<Tabs>
+  <Tab title="TCP/IP">
+    **TCP/IP** (Transmission Control Protocol / Internet Protocol) is the foundational suite of protocols that governs how data is addressed, transmitted, and received across the internet. IP handles addressing — every device on the internet has a unique IP address (e.g., `192.168.1.1` for IPv4 or a longer hexadecimal string for IPv6) that identifies it on the network. TCP sits on top of IP and ensures reliable, ordered delivery of packets. If any packets are lost in transit, TCP detects this and requests retransmission automatically.
+  </Tab>
+  <Tab title="HTTP/HTTPS">
+    **HTTP** (HyperText Transfer Protocol) defines how web browsers and servers communicate. When you visit a website, your browser sends an HTTP request to a web server, which responds with the HTML, CSS, and JavaScript that make up the page. **HTTPS** is the secure version of HTTP — it wraps the communication in **TLS (Transport Layer Security)** encryption, so that data in transit cannot be intercepted or tampered with by third parties. You can identify HTTPS by the padlock icon in your browser's address bar. Today, HTTPS is the standard for virtually all websites.
+  </Tab>
+  <Tab title="DNS">
+    **DNS** (Domain Name System) is the internet's phonebook. Computers identify each other by numerical IP addresses, but humans remember names like `www.example.com`. DNS translates domain names into IP addresses. When you type a URL into your browser, a DNS resolver (usually provided by your ISP or a public service like Google's `8.8.8.8`) queries a hierarchy of DNS servers to find the IP address associated with that domain name, then returns it to your browser so the connection can proceed.
+  </Tab>
+</Tabs>
+
+## How a Web Request Works
+
+Every time you load a webpage, a precise sequence of events unfolds behind the scenes in a fraction of a second.
+
+<Steps>
+  <Step title="You enter a URL">
+    You type a web address (e.g., `https://www.example.com`) into your browser and press Enter. Your browser parses the URL to identify the protocol (`https`), the domain name (`www.example.com`), and any path or query parameters.
+  </Step>
+  <Step title="DNS lookup">
+    Your browser checks its local cache for a known IP address for the domain. If none is found, it queries a DNS resolver, which works through the DNS hierarchy to find the correct IP address and returns it to your browser.
+  </Step>
+  <Step title="TCP connection established">
+    With the IP address in hand, your browser initiates a TCP connection to the web server at that address, typically on port 443 for HTTPS. This involves a "three-way handshake" — a brief exchange of synchronization packets that confirms both sides are ready to communicate. For HTTPS, a TLS handshake also occurs to negotiate encryption.
+  </Step>
+  <Step title="HTTP request sent">
+    Your browser sends an HTTP GET request to the server, asking for the specific page or resource. The request includes headers with information like your browser type, accepted content formats, and any cookies associated with the site.
+  </Step>
+  <Step title="Response received and rendered">
+    The server processes the request and sends back an HTTP response containing a status code (e.g., `200 OK`) and the page content — typically HTML, along with references to CSS stylesheets, JavaScript files, and images. Your browser parses and renders these resources, displaying the finished page on your screen.
+  </Step>
+</Steps>
+
+## Internet vs. the Web
+
+Many people use "the internet" and "the web" interchangeably, but they are distinct things. The **internet** is the underlying physical and logical infrastructure — the cables, routers, protocols, and global network of connected devices. The **World Wide Web** is a service that runs *on top of* the internet. It is a system of interlinked documents and resources, accessed via HTTP/HTTPS and navigated through web browsers.
+
+Other services also run on the internet without being "the web" — email (SMTP/IMAP), file transfer (FTP), online gaming, video calls, and messaging apps all use internet infrastructure without necessarily involving the Web. Think of the internet as the highway system and the Web as one of many types of vehicles that use it.
+
+<Info>
+  **Internet safety basics:** Always look for HTTPS before entering personal information on a website. Use strong, unique passwords for each account, enable two-factor authentication where possible, and be cautious about the personal information you share online. Keeping your devices and apps up to date helps protect you from known security vulnerabilities.
+</Info>
