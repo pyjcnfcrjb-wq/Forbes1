@@ -27,7 +27,9 @@
               "technology/internet-basics",
               "technology/software",
               "technology/cybersecurity",
-              "technology/artificial-intelligence"
+              "technology/artificial-intelligence",
+              "technology/tre",
+              "technology/forward-deployed-engineers"
             ]
           },
           {
@@ -71,6 +73,9 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Azure TRE"
       }
     ]
   }
