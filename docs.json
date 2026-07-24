@@ -12,9 +12,9 @@
     "tabs": [
       {
         "tab": "Knowledge Base",
-        "groups": [
+        "products": [
           {
-            "group": "Overview",
+            "product": "Overview",
             "pages": [
               "introduction",
               "how-to-use",
@@ -22,7 +22,7 @@
             ]
           },
           {
-            "group": "Technology",
+            "product": "Technology",
             "pages": [
               "technology/internet-basics",
               "technology/software",
@@ -33,7 +33,7 @@
             ]
           },
           {
-            "group": "Science",
+            "product": "Science",
             "pages": [
               "science/biology",
               "science/physics",
@@ -42,7 +42,7 @@
             ]
           },
           {
-            "group": "Society & Culture",
+            "product": "Society & Culture",
             "pages": [
               "society/history",
               "society/geography",
@@ -51,7 +51,7 @@
             ]
           },
           {
-            "group": "Health & Wellness",
+            "product": "Health & Wellness",
             "pages": [
               "health/nutrition",
               "health/mental-health",
