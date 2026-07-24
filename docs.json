@@ -78,5 +78,11 @@
         "tab": "Azure TRE"
       }
     ]
+  },
+  "navbar": {
+    "links": []
+  },
+  "interaction": {
+    "drilldown": true
   }
 }
