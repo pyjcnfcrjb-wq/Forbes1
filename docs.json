@@ -75,7 +75,17 @@
         ]
       },
       {
-        "tab": "Azure TRE"
+        "tab": "Azure TRE",
+        "dropdowns": [
+          {
+            "dropdown": "Selection1",
+            "description": "List of things",
+            "pages": [
+              "page1",
+              "page2"
+            ]
+          }
+        ]
       }
     ]
   },
