@@ -6,7 +6,7 @@ Azure Trusted Research Environment, or Azure TRE, is an Azure-based platform for
 
 This page introduces the system from the codebase outward. It focuses on what the repository implements rather than reproducing the project README or wiki.
 
-## What the platform provides
+## What the Platform Provides
 
 Azure TRE separates platform administration from the environments in which research work takes place. Administrators operate a shared control plane, while research teams use independently provisioned workspaces containing approved services and user resources.
 
@@ -22,29 +22,29 @@ At a high level, the platform supports:
 
 The implementation is modular. Application code coordinates requests and state, while versioned infrastructure templates define the Azure resources deployed for the core platform, workspaces, workspace services, shared services, and user resources.
 
-## Who this documentation is for
+## Who This Documentation Is For
 
 This documentation is intended for four overlapping audiences.
 
-### Platform operators
+### Platform Operators
 
 Platform operators deploy, configure, monitor, upgrade, and troubleshoot an Azure TRE instance. They need to understand the platform topology, identity configuration, networking, deployment automation, operational dependencies, and release process.
 
-### Workspace administrators
+### Workspace Administrators
 
 Workspace administrators create and govern research environments. They need to understand workspace types, service catalogues, access control, resource lifecycles, cost visibility, and data import or export controls.
 
-### Template authors
+### Template Authors
 
 Template authors extend Azure TRE by defining deployable workspace, workspace-service, shared-service, or user-resource bundles. They need to understand the template contract, parameter schemas, versioning, Porter bundles, Terraform modules, registration, and upgrade behaviour.
 
-### Application contributors
+### Application Contributors
 
 Application contributors change the API, resource processor, airlock processor, user interface, CLI, automation, or tests. They need component-level development guidance, local setup, architecture boundaries, event flows, data models, test strategy, and contribution conventions.
 
-## Core concepts
+## Core Concepts
 
-### Control plane
+### Control Plane
 
 The control plane is the shared layer used to manage the TRE. It includes the API, persistence and messaging integrations, the resource processor, identity and authorization logic, and the web interface.
 
@@ -56,23 +56,23 @@ A workspace is an isolated environment created for a research team or project. I
 
 The exact Azure resources and network controls vary by template. This allows an implementation to offer multiple workspace patterns without changing the central application.
 
-### Workspace service
+### Workspace Service
 
 A workspace service is a shared capability deployed inside a workspace. Examples may include remote-access platforms, data-science services, development platforms, or other team-level tooling.
 
 Workspace services are defined independently from workspace templates so that a workspace can be assembled from approved, versioned building blocks.
 
-### User resource
+### User Resource
 
 A user resource is provisioned for an individual within a workspace service. It commonly represents a personal compute or interactive environment associated with a specific user.
 
 Keeping user resources distinct from shared workspace services allows the platform to manage ownership, access, deployment, and deletion at the correct granularity.
 
-### Shared service
+### Shared Service
 
 A shared service provides functionality available across multiple workspaces. Shared services are represented separately in the template hierarchy because their lifecycle and scope differ from resources deployed into a single workspace.
 
-### Resource template
+### Resource Template
 
 A resource template is a versioned deployment definition registered with the platform. Templates supply the infrastructure and metadata needed to create a particular type of resource.
 
@@ -104,7 +104,7 @@ airlock_processor/
 
 This design keeps file-processing and state-transition work outside the primary API request path.
 
-## Major repository components
+## Major Repository Components
 
 The following components form the main implementation surface.
 
@@ -122,7 +122,7 @@ The following components form the main implementation surface.
 | `e2e_tests/` | End-to-end tests spanning deployed platform behaviour |
 | `.github/workflows/` | Continuous integration, validation, packaging, and release workflows |
 
-### API application
+### API Application
 
 The API application is organised into explicit layers:
 
@@ -147,7 +147,7 @@ The API should therefore be documented in two ways:
 1. As an external interface for users, administrators, and automation
 2. As an internal application architecture for contributors
 
-### Resource processor
+### Resource Processor
 
 Infrastructure changes are long-running and failure-prone compared with ordinary API operations. The resource processor isolates this work from the web application and provides the execution environment for creating, updating, and deleting template-based resources.
 
@@ -162,7 +162,7 @@ A typical operation moves through several stages:
 
 Later sections should document the precise message contracts, state transitions, retry behaviour, and failure-recovery process.
 
-### User interface
+### User Interface
 
 The `ui/` directory contains the web client used by platform users and administrators. It consumes the API rather than deploying infrastructure directly.
 
@@ -192,7 +192,7 @@ The documentation should treat templates as products with their own lifecycle:
 
 Template documentation should also identify which files are contractual, which are implementation details, and which compatibility rules apply across versions.
 
-## How the components work together
+## How the Components Work Together
 
 The following simplified flow shows the main responsibility boundaries.
 
@@ -216,7 +216,7 @@ flowchart LR
 
 The API acts as the system's coordination layer. It owns request validation and resource state, while processors perform asynchronous work. Templates define what is deployed, and the UI and CLI provide user-facing interaction paths.
 
-## Resource hierarchy
+## Resource Hierarchy
 
 The application model can be understood as a hierarchy:
 
@@ -240,23 +240,23 @@ Documentation for every resource type should therefore cover:
 - Emitted events and asynchronous operations
 - Deletion and recovery semantics
 
-## Deployment model
+## Deployment Model
 
 The repository uses infrastructure as code and automation rather than relying on manual Azure Portal configuration. Platform deployment and resource deployment are related but distinct concerns.
 
-### Platform deployment
+### Platform Deployment
 
 Platform deployment establishes the shared TRE control plane and its supporting Azure services.
 
 This includes the services required to host and operate the API, user interface, messaging, persistence, resource processing, identity integration, networking, and shared operational capabilities.
 
-### Resource deployment
+### Resource Deployment
 
 Resource deployment creates workspaces and the services or user resources inside them from registered templates.
 
 This distinction should remain visible throughout the documentation. Operators need a deterministic procedure for deploying the platform, while users need a predictable catalogue-driven process for deploying resources after the platform is running.
 
-## Security model at a glance
+## Security Model at a Glance
 
 Security is implemented through several cooperating layers rather than a single feature:
 
@@ -273,7 +273,7 @@ A complete security section should map each control to its implementation point 
 
 It should also state which controls are supplied by the accelerator and which remain the responsibility of the adopting organisation.
 
-## Extensibility model
+## Extensibility Model
 
 Azure TRE is designed to be extended primarily through templates and configuration. This lets adopters add new Azure services, computing environments, and workspace patterns while retaining a common control plane.
 
@@ -289,35 +289,35 @@ Extensions should avoid bypassing the core lifecycle model. A well-integrated ex
 
 Changes to the API, processor, or UI may still be required for genuinely new platform behaviours, but they should not be the default way to introduce a new deployable tool.
 
-## Documentation principles
+## Documentation Principles
 
 The repository contains several different technical domains. Documentation should therefore be organised around user intent rather than source-code directories.
 
 The main documentation journeys should be:
 
-### Understand the platform
+### Understand the Platform
 
 For readers who need the architecture, domain model, security boundaries, and runtime flows.
 
-### Deploy and configure the platform
+### Deploy and Configure the Platform
 
 For operators responsible for subscriptions, identities, networking, configuration, infrastructure deployment, and upgrades.
 
-### Use and administer the platform
+### Use and Administer the Platform
 
 For users and workspace administrators managing workspaces, services, user resources, access, and data-transfer workflows.
 
-### Extend the platform
+### Extend the Platform
 
 For template authors adding new workspace patterns, services, or user resources.
 
-### Contribute to the platform
+### Contribute to the Platform
 
 For developers changing application code, processors, infrastructure, user interfaces, automation, or tests.
 
 Reference material should supplement these journeys rather than dominate the primary navigation.
 
-## What to read next
+## What to Read Next
 
 Continue with the architecture section for component boundaries and runtime flows, then use the role-specific guides for deployment, operation, workspace administration, template authoring, and application development.
 
